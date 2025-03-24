@@ -7,4 +7,6 @@ public class Subscription
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public int Balance { get; set; } //логичнее сделать int, но зависит от полного функцианала
+    
+    public Player Player { get; set; }
 }
