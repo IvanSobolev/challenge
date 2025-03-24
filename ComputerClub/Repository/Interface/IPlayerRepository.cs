@@ -2,6 +2,6 @@
 
 public interface IPlayerRepository
 {
-    Task AddUser(string name, int year);
-    Task<IEnumerable<string>> GetAllUserGames(int userId);
+    Task AddUserAsync(string name, int year);
+    Task<IEnumerable<string>> GetAllUserGamesAsync(int userId);
 }

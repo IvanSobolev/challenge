@@ -2,5 +2,5 @@
 
 public interface ISessionRepository
 {
-    Task<IEnumerable<float>> GetAvgPlayTime(int userId);
+    Task<float> GetAvgPlayerPlaytime(int playerId);
 }
