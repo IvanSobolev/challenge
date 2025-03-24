@@ -7,4 +7,6 @@ public class Session
     public DateTime StartTime { get; set; }
     public int DurationMinutes { get; set; }
     public int PlayerId { get; set; }
+    
+    public Player Player { get; set; }
 }
