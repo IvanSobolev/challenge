@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ComputerClub.Controller;
 
 [ApiController]
-[Route("players")]
+[Route("session")]
 public class SessionController (ISessionManager sessionManager) : ControllerBase
 {
     private readonly ISessionManager _sessionManager = sessionManager;
