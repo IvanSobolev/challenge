@@ -11,11 +11,11 @@ public interface ISubscriptionRepository
     /// <param name="endDate">End subscription date</param>
     /// <param name="balance">Subscription balance</param>
     /// <returns>New subscription</returns>
-    Task<Subscription> AddSubscrioption(int playerId, DateTime endDate, int balance);
+    Task<Subscription> AddSubscrioptionAsync(int playerId, DateTime endDate, int balance);
     
     /// <summary>
     /// Delete subscription by id
     /// </summary>
     /// <param name="subId">subscription id</param>
-    Task DeleteSubscription(int subId);
+    Task DeleteSubscriptionAsync(int subId);
 }

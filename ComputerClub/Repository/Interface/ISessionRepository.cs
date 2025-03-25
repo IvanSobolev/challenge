@@ -7,5 +7,5 @@ public interface ISessionRepository
     /// </summary>
     /// <param name="playerId">User Id</param>
     /// <returns>Average playtime</returns>
-    Task<float> GetAvgPlayerPlaytime(int playerId);
+    Task<float> GetAvgPlayerPlaytimeAsync(int playerId);
 }

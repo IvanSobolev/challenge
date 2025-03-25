@@ -8,8 +8,8 @@ public class SessionManager(ISessionRepository sessionRepository) : ISessionMana
     private readonly ISessionRepository _sessionRepository = sessionRepository;
     
     /// <inheritdoc />
-    public async Task<float> GetAvgPlayerPlaytime(int playerId)
+    public async Task<float> GetAvgPlayerPlaytimeAsync(int playerId)
     {
-        return await _sessionRepository.GetAvgPlayerPlaytime(playerId);
+        return await _sessionRepository.GetAvgPlayerPlaytimeAsync(playerId);
     }
 }

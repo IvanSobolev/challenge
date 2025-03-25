@@ -10,11 +10,11 @@ public interface ISubscriptionManager
     /// </summary>
     /// <param name="subsciptionDto">Add subscription data</param>
     /// <returns>New subscription</returns>
-    Task<Subscription> AddSubscrioption(AddSubsciptionDto subsciptionDto);
+    Task<Subscription> AddSubscrioptionAsync(AddSubsciptionDto subsciptionDto);
     
     /// <summary>
     /// Delete subscription by id
     /// </summary>
     /// <param name="subId">subscription id</param>
-    Task DeleteSubscription(int subId);
+    Task DeleteSubscriptionAsync(int subId);
 }

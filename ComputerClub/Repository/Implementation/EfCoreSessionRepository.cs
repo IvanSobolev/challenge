@@ -9,7 +9,7 @@ public class EfCoreSessionRepository(DataContext dataContext) : ISessionReposito
     private readonly DataContext _dataContext = dataContext;
     
     /// <inheritdoc />
-    public async Task<float> GetAvgPlayerPlaytime(int playerId)
+    public async Task<float> GetAvgPlayerPlaytimeAsync(int playerId)
     {
         return (float)await _dataContext.Sessions.Where(s => s.PlayerId == playerId).AverageAsync(s => s.DurationMinutes);
     }

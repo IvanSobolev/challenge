@@ -9,14 +9,14 @@ public class SubscriptionManager(ISubscriptionRepository subscriptionRepository)
 {
     private readonly ISubscriptionRepository _subscriptionRepository = subscriptionRepository;
     
-    public async Task<Subscription> AddSubscrioption(AddSubsciptionDto subsciptionDto)
+    public async Task<Subscription> AddSubscrioptionAsync(AddSubsciptionDto subsciptionDto)
     {
-        return await _subscriptionRepository.AddSubscrioption(subsciptionDto.PlayerId, subsciptionDto.EndDate,
+        return await _subscriptionRepository.AddSubscrioptionAsync(subsciptionDto.PlayerId, subsciptionDto.EndDate,
             subsciptionDto.Balance);
     }
 
-    public async Task DeleteSubscription(int subId)
+    public async Task DeleteSubscriptionAsync(int subId)
     {
-        await _subscriptionRepository.DeleteSubscription(subId);
+        await _subscriptionRepository.DeleteSubscriptionAsync(subId);
     }
 }
