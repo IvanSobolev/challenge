@@ -8,7 +8,8 @@ public class EfCorePlayerRepository(DataContext dataContext) : IPlayerRepository
 {
     private readonly DataContext _dataContext = dataContext;
     
-    public async Task AddUserAsync(string name, int year)
+    /// <inheritdoc />
+    public async Task<Player> AddUserAsync(string name, int year)
     {
         Player newPlayer = new Player()
         {
@@ -19,8 +20,10 @@ public class EfCorePlayerRepository(DataContext dataContext) : IPlayerRepository
         };
         await _dataContext.Players.AddAsync(newPlayer);
         await _dataContext.SaveChangesAsync();
+        return newPlayer;
     }
 
+    /// <inheritdoc />
     public async Task<IEnumerable<string>> GetAllUserGamesAsync(int userId)
     {
         Player? player = await _dataContext.Players.FirstOrDefaultAsync(u => u.Id == userId);

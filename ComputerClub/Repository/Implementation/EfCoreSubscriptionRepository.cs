@@ -8,7 +8,8 @@ public class EfCoreSubscriptionRepository(DataContext dataContext) : ISubscripti
 {
     private readonly DataContext _dataContext = dataContext;
     
-    public async Task AddSubscrioption(int playerId, DateTime endDate, int balance)
+    /// <inheritdoc />
+    public async Task<Subscription> AddSubscrioption(int playerId, DateTime endDate, int balance)
     {
         var subscription = new Subscription()
         {
@@ -20,8 +21,10 @@ public class EfCoreSubscriptionRepository(DataContext dataContext) : ISubscripti
 
         await _dataContext.Subscriptions.AddAsync(subscription);
         await _dataContext.SaveChangesAsync();
+        return subscription;
     }
 
+    /// <inheritdoc />
     public async Task DeleteSubscription(int subId)
     {
         Subscription? subscription = await _dataContext.Subscriptions.FirstOrDefaultAsync(s => s.Id == subId);
