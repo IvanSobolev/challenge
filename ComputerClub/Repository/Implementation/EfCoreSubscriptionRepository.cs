@@ -9,7 +9,7 @@ public class EfCoreSubscriptionRepository(DataContext dataContext) : ISubscripti
     private readonly DataContext _dataContext = dataContext;
     
     /// <inheritdoc />
-    public async Task<Subscription> AddSubscrioption(int playerId, DateTime endDate, int balance)
+    public async Task<Subscription> AddSubscrioptionAsync(int playerId, DateTime endDate, int balance)
     {
         var subscription = new Subscription()
         {
@@ -25,7 +25,7 @@ public class EfCoreSubscriptionRepository(DataContext dataContext) : ISubscripti
     }
 
     /// <inheritdoc />
-    public async Task DeleteSubscription(int subId)
+    public async Task DeleteSubscriptionAsync(int subId)
     {
         Subscription? subscription = await _dataContext.Subscriptions.FirstOrDefaultAsync(s => s.Id == subId);
         if (subscription == null)

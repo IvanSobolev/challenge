@@ -1,6 +1,6 @@
-﻿namespace ComputerClub.Repository.Implementation;
+﻿namespace ComputerClub.Manager.Interfaces;
 
-public interface ISessionRepository
+public interface ISessionManager
 {
     /// <summary>
     /// Get average user playtime 
